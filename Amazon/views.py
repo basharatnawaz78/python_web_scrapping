@@ -50,7 +50,17 @@ def product(request):
         fpeople_reviewed = frev2[3].text
 
 
-
+        # ////////////////////////////////////////////
+        url = 'https://www.snapdeal.com/search?keyword='
+        query = request.POST.get('searchbox')
+        query = query.replace(' ','+')
+        url+=query
+        page = requests.get(url)
+        soup = BeautifulSoup(page.content)
+       
+        sname = soup.find(class_='product-title') #name
+        sprice = soup.find(class_='lfloat product-price') #price
+        sreviews = soup.find(class_='product-rating-count')
 
         
     context = {
@@ -65,6 +75,10 @@ def product(request):
         'freviews':freviews.text,
         'fpeople_rated':fpeople_rated,
         'fpeople_reviewed':fpeople_reviewed,
+
+        'sname':sname.text,
+        'sprice':sprice.text,
+        'sreviews':sreviews.text,
 
     }
     return render(request, 'product.html', context)
