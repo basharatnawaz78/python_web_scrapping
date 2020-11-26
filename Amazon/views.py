@@ -27,15 +27,44 @@ def product(request):
         reviews = soup.find(class_='a-icon a-icon-star-small a-star-small-4 aok-align-bottom').text #review points
         people = soup.find(class_='a-row a-size-small') #people
         peopleRated = people.find(class_='a-size-base').text #peopleRated
+        # //////////////////////////////////
+
+        url = 'https://www.flipkart.com/search?q='
+        query = request.POST.get('searchbox')
+        query = query.replace(' ','+')
+        url+=query
+        page = requests.get(url)
+        soup = BeautifulSoup(page.content)
+
+        fname = None #name
+        if(soup.find(class_='_4rR01T')==None):
+            fname = soup.find(class_='s1Q9rs')
+        else:
+            fname = soup.find(class_='_4rR01T')
+        fprice = soup.find(class_='_30jeq3') #price
         
-       
+        freviews = soup.find(class_='_3LWZlK') #review points
+        frev = soup.select('span._2_R_DZ')
+        frev2 = frev[0].find_all('span')
+        fpeople_rated = frev2[1].text
+        fpeople_reviewed = frev2[3].text
+
+
+
+
         
     context = {
         'price' : price,
         'name' : name,
         'reviews' : reviews,
         'peopleRated' : peopleRated,
-        'image' : image
+        'image' : image,
+
+        'fname':fname.text,
+        'fprice':fprice.text,
+        'freviews':freviews.text,
+        'fpeople_rated':fpeople_rated,
+        'fpeople_reviewed':fpeople_reviewed,
 
     }
     return render(request, 'product.html', context)

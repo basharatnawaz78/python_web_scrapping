@@ -15,7 +15,7 @@
     {% comment %} <h1>Name : {{name}}<h1/> 
     <h1>Price : {{price}}<h1/> {% endcomment %}
     <div class="row">
-            <div class="col-md-12">
+        <div class="col-md-12">
                 <div class="container-fluid p-2 bg-dark text-light">
                     <div class="h2">Amazon++</div>
                 </div>
@@ -23,7 +23,7 @@
         </div>
         <div class="row">
             <div class="col-md-3"></div>
-            <div class="col-md-6 jumbotron">
+            <div class="col-md-12 jumbotron">
                 <h1>{{name}}</h1><hr>
                 <img src="{{image}}" alt="{{name}}" width="50" height="100">
                 <h3 style="color:green">Price : Rs.{{price}}</h3>
@@ -35,6 +35,32 @@
             </div>
             <div class="col-md-3"></div>
         </div>
+
+
+        {% comment %} /////////////////////////// {% endcomment %}
+        <div class="row">
+          <div class="col-md-12">
+                  <div class="container-fluid p-2 bg-dark text-light">
+                      <div class="h2">Flipkart++</div>
+                  </div>
+          </div>
+        </div>
+        
+
+
+        <div class="row">
+            <div class="col-md-12 jumbotron">
+                <h1>{{fname}}</h1><hr>
+                <img src="{{image}}" alt="{{name}}" width="50" height="100">
+                <h3 style="color:green">Price : Rs.{{fprice}}</h3>
+                <h3 style="color:blue">Flipkart Review Points : {{freviews}}</h3>
+                <h3 style="color:red">People Rated :  {{fpeople_rated}}</h3>
+                <h4>{{fpeople_reviewed}}</h4>
+                <div>
+                    
+                </div>
+            </div>
+        </div> 
   
     <!-- Optional JavaScript; choose one of the two! -->
 
