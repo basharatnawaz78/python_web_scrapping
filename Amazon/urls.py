@@ -3,5 +3,7 @@ from django.urls import path
 from Amazon import views 
 urlpatterns = [
     path("", views.index, name='home'),
-    path("product", views.product, name='product')
+    path("product", views.product, name='product'),
+    path("phoneListTable", views.phoneListTable, name='phoneListTable')
+   
 ]

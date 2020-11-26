@@ -82,3 +82,6 @@ def product(request):
 
     }
     return render(request, 'product.html', context)
+
+def phoneListTable(request):
+    return render(request, 'phoneListTable.html')
