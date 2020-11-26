@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Flipkart</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    </head>
+    <body class="bg-light">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="container-fluid p-2 bg-dark text-light">
+                    <div class="h2">Flipkart++</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 jumbotron mt-4">
+                <div class="display-4">Search</div><hr>
+                <form action="./submit" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="productname">Product Name</label>
+                        <input type="text" name="pname" class="form-element" style="display:block;width:100%;" autofocus>
+                    </div>
+                    <button type="submit" class="btn btn-dark">
+                        SEARCH
+                    </button>
+                </form>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </body>
+</html>
