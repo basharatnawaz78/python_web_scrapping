@@ -99,14 +99,23 @@ def product(request):
 
 
 def pdfreport(request):
+    aprice = mycontext['price']
+    fprice = mycontext['fprice'][1:]
+    sprice = mycontext['sprice'][1:]
     pdf = FPDF()
     pdf.add_page()
     pdf.set_font("Arial",size=15)
     pdf.cell(200,10,txt='Shopping Guide Report',ln=1,align='C')
     pdf.cell(200,10,txt="Amazon + Flipkart + Snapdeal",ln=1,align='C')
-    pdf.cell(200,10,txt="Flipkart Review {}".format(mycontext['freviews']),ln=1,align='L')
-    pdf.cell(200,10,txt="Amazon Review {}".format(mycontext['peopleRated']),ln=1,align='L')
+    pdf.cell(200,10,txt="Flipkart Reviews {}".format(mycontext['peopleRated']),ln=1,align='L')
+    pdf.cell(200,10,txt="Amazon Review {}".format(mycontext['fpeople_rated']),ln=1,align='L')
     pdf.cell(200,10,txt="Snapdeal Review {}".format(mycontext['sreviews']),ln=1,align='L')
+    pdf.cell(200,10,txt="PRICE",ln=1,align='C')
+    pdf.cell(200,10,txt="Amazon Price {}".format(aprice),ln=1,align='L')
+    pdf.cell(200,10,txt="Flipkart Price {}".format(fprice),ln=1,align='L')
+    pdf.cell(200,10,txt="Snapdeal Price {}".format(sprice),ln=1,align='L')
+    # pdf.cell(200,10,txt="Average"),ln=1,align='C')
+    # pdf.cell(200,10,txt="Average Reviews: {}".format(),ln=1,align='L')
     pdf.output("pdfreport.pdf")
     return HttpResponse('''
     <h2>PDF DOWNLOADED LOCALLY!</h2>
