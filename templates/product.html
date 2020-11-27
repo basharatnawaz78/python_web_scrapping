@@ -8,8 +8,6 @@
     <title>Shopping Guide</title>  
   </head>
   <body class="bg-dark text-light">
-    {% comment %} <h1>Name : {{name}}<h1/> 
-    <h1>Price : {{price}}<h1/> {% endcomment %}
         <div class="row">
             <div class="col-md-12">
                 <div class="container-fluid p-2 bg-primary text-light">
@@ -20,7 +18,7 @@
         </div>
         <div class="row">
             <div>
-                <a class="btn btn-light text-dark p-2 m-4 btn-lg" id='amzo'>Amazon</a>
+                <a class="btn btn-success text-light p-2 m-4 btn-lg" id='amzo'>Amazon</a>
                 <a class="btn btn-primary text-light p-2 m-4 btn-lg" id="flip">Flipkart</a>
                 <a class="btn btn-danger text-light p-2 m-4 btn-lg" id="snap">Snapdeal</a>
             </div>
@@ -43,6 +41,8 @@
                 <h3 class="text-dark">Price : Rs.{{price}}</h3>
                 <h3 class="text-success">Amazon Review Points : {{reviews}}</h3>
                 <h3 class="text-dark">People Rated :  {{peopleRated}}</h3>
+                <a href="https://www.amazon.in/s?k={{name}}&rh=n%3A1389401031&ref=nb_sb_noss" class="btn btn-success text-light p-2 btn-lg">Buy Now</a>
+                <a href="https://www.youtube.com/results?search_query={{name}}" class="btn btn-danger text-light ml-2 p-2 btn-lg">Youtube Review</a>
                 <div>
                     
                 </div>
@@ -70,6 +70,8 @@
                 <h3 class="text-success h3">Flipkart Review Points : {{freviews}}</h3>
                 <h3 class="text-dark h3">People Rated :  {{fpeople_rated}}</h3>
                 <h4 class="text-dark h4">{{fpeople_reviewed}}</h4>
+                <a href="https://www.flipkart.com/search?q={{fname}}" class="btn btn-success text-light p-2 btn-lg">Buy Now</a>
+                <a href="https://www.youtube.com/results?search_query={{fname}}" class="btn btn-danger text-light ml-2 p-2 btn-lg">Youtube Review</a>
                 <div>
                     
                 </div>
@@ -90,6 +92,8 @@
                 <img src="{{image}}" alt="{{sname}}" width="50" height="100"><hr>
                 <h3 class="text-dark h3">Price : {{sprice}}</h3>
                 <h3 class="text-dark h3">Snapdeal Review Counts:<span class="text-success"> {{sreviews}}</span></h3>
+                <a href="https://www.snapdeal.com/search?keyword={{sname}}" class="btn btn-success text-light p-2 btn-lg">Buy Now</a>
+                <a href="https://www.youtube.com/results?search_query={{sname}}" class="btn btn-danger text-light ml-2 p-2 btn-lg">Youtube Review</a>
                 <div>
                     
                 </div>

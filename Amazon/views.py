@@ -22,6 +22,7 @@ def product(request):
     headers = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0", "Accept-Encoding":"gzip, deflate", "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", "DNT":"1","Connection":"close", "Upgrade-Insecure-Requests":"1"}
     print("hello")
     if request.method == "POST":
+        # ///////////////////////For Amazon///////////////////////////////
         searchItem = request.POST.get('searchbox')
         searchItem = searchItem.replace(' ','+')
         url = 'https://www.amazon.in/s?k=' + searchItem + '&rh=n%3A1389401031&ref=nb_sb_noss'
@@ -39,7 +40,7 @@ def product(request):
         people = soup.find(class_='a-row a-size-small') #people
         peopleRated = people.find(class_='a-size-base').text #peopleRated
         
-        # //////////////////////////////////
+        # //////////////////For Flipkart////////////////
         url = 'https://www.flipkart.com/search?q='
         query = request.POST.get('searchbox')
         query = query.replace(' ','+')
@@ -61,7 +62,7 @@ def product(request):
         fpeople_reviewed = frev2[3].text
 
 
-        # ////////////////////////////////////////////
+        # ///////////////////For Snapdeal/////////////////////////
         url = 'https://www.snapdeal.com/search?keyword='
         query = request.POST.get('searchbox')
         query = query.replace(' ','+')
