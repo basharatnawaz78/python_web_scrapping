@@ -6,6 +6,7 @@ urlpatterns = [
     path("product", views.product, name='product'),
     path("AmazonList", views.AmazonList, name='AmazonList'),
     path("FlipkartList", views.FlipkartList, name='FlipkartList'),
+    path("SnapdealList", views.SnapdealList, name='SnapdealList'),
     path('pdfreport',views.pdfreport)
    
 ]

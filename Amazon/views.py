@@ -12,6 +12,9 @@ def AmazonList(request):
 def FlipkartList(request):
     return render(request, 'FlipkartList.html')
 
+def SnapdealList(request):
+    return render(request, 'SnapdealList.html')
+
 def index(request):
     return render(request, 'index.html')
 
